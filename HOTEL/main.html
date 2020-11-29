@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hilbert Grand Hotel</title>
+    <link rel="icon" href="rsc/Welcome.png" type="image/x-icon">
+  </head>
+  <body>
+    <div id="infiniteHotel" onclick="loadPage(0)"></div>
+    <img id="reservationButton" src="RSC/reservation_sign.png" onclick="loadPage(1)">
+      <div id="infoM">
+      </div>
+    <div id="welcome">
+      <img id="welcomeImg" src="RSC/Welcome.png">
+      <h2>
+        Finitely many new guests
+      </h2>
+      <p>
+        Suppose a new guest arrives and wishes to be accommodated in the hotel. We can (simultaneously) move the guest currently in room 1 to room 2, the guest currently in room 2 to room 3, and so on, moving every guest from their current room n to room n+1. After this, room 1 is empty and the new guest can be moved into that room. By repeating this procedure, it is possible to make room for any finite number of new guests.
+      </p>
+      <h2>
+        Infinitely many new guests
+      </h2>
+      <p>
+        It is also possible to accommodate a countably infinite number of new guests: just move the person occupying room 1 to room 2, the guest occupying room 2 to room 4, and, in general, the guest occupying room n to room 2n (2 times n), and all the odd-numbered rooms (which are countably infinite) will be free for the new guests.
+      </p>
+      <h2>
+        Infinitely many coaches with infinitely many guests each      </h2>
+      <p>
+        It is possible to accommodate countably infinitely many coachloads of countably infinite passengers each, by several different methods. Most methods depend on the seats in the coaches being already numbered (or use the axiom of countable choice). In general any pairing function can be used to solve this problem. For each of these methods, consider a passenger's seat number on a coach to be N, and their coach number to be C, and the numbers N and C are then fed into the two arguments of the pairing function.
+      </p>
+      <h3>
+        Prime powers method
+      </h3>
+      <p>
+        Empty the odd numbered rooms by sending the guest in room {\displaystyle i}i to room {\displaystyle 2^{i}}2^{i}, then put the first coach's load in rooms {\displaystyle 3^{n}}3^{n}, the second coach's load in rooms {\displaystyle 5^{n}}5^{n}; for coach number {\displaystyle c}c we use the rooms {\displaystyle p^{n}}p^{n} where {\displaystyle p}p is the {\displaystyle c}cth odd prime number. This solution leaves certain rooms empty (which may or may not be useful to the hotel); specifically, all odd numbers that are not prime powers, such as 15 or 847, will no longer be occupied. (So, strictly speaking, this shows that the number of arrivals is less than or equal to the number of vacancies created. It is easier to show, by an independent means, that the number of arrivals is also greater than or equal to the number of vacancies, and thus that they are equal, than to modify the algorithm to an exact fit.) (The algorithm works equally well if one interchanges {\displaystyle n}n and {\displaystyle c}c, but whichever choice is made, it must be applied uniformly throughout.)
+      </p>
+      <h3>
+        Prime factorization method
+      </h3>
+      <p>
+        You can put each person of a certain seat {\displaystyle s}s and coach {\displaystyle c}c into room {\displaystyle 2^{s}3^{c}}2^{s}3^{c} (presuming c=0 for the people already in the hotel, 1 for the first coach, etc. ...). Because every number has a unique prime factorization, it's easy to see all people will have a room, while no two people will end up in the same room. For example, the person in room 2592 ({\displaystyle 2^{5}3^{4}}2^{5}3^{4}) was sitting in on the 4th coach, on the 5th seat. Like the prime powers method, this solution leaves certain rooms empty.
+      This method can also easily be expanded for infinite nights, infinite entrances, etc. ... ( {\displaystyle 2^{s}3^{c}5^{n}7^{e}}2^{s}3^{c}5^{n}7^{e} )
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+
+  </body>
+</html>
